@@ -1,0 +1,25 @@
+USEUNIT(".\ai.cpp");
+USEUNIT(".\aim.cpp");
+USEUNIT(".\alias.cpp");
+USEUNIT(".\config_manager.cpp");
+USEUNIT(".\console.cpp");
+USEUNIT(".\debug_utils.cpp");
+USEUNIT(".\dll_register.cpp");
+USEUNIT(".\hud.cpp");
+USEUNIT(".\list.cpp");
+USEUNIT(".\main_menu.cpp");
+USEUNIT(".\map.cpp");
+USEUNIT(".\map_dm2.cpp");
+USEUNIT(".\map_tourney1.cpp");
+USEUNIT(".\map_tourney4.cpp");
+USEUNIT(".\menu.cpp");
+USEUNIT(".\multibot.cpp");
+USEUNIT(".\mw_hook.cpp");
+USEUNIT(".\pqrmod.cpp");
+USEUNIT(".\proc_hack.cpp");
+USEUNIT(".\time_help.cpp");
+USEUNIT(".\delphi\bot_register.pas");
+USERC(".\pqrmod.rc");
+USEFILE("vctobpr.log");
+
+#define DllEntryPoint

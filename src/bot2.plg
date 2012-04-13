@@ -1,0 +1,167 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: bot2 - Win32 Release_NO_CHEAT--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F1.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "PQRMOD_EXPORTS" /D "NO_CHEAT" /FR"obj/" /Fo"obj/" /Fd"obj/" /FD /c 
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\alias.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\autorecord.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\config_manager.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\console.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\health.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\hud.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\main_menu.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\mw_hook.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\pqrmod.cpp"
+"C:\Games\nfk_bot_project\frogbot_01_alpha3\proc_hack.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F1.tmp" 
+Creating temporary file "C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F2.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"obj/pqrmod.pdb" /machine:I386 /out:"public_release/pqrmod.dll" /implib:"obj/pqrmod.lib" 
+.\obj\ai.obj
+.\obj\aim.obj
+.\obj\alias.obj
+.\obj\autorecord.obj
+.\obj\config_manager.obj
+.\obj\console.obj
+.\obj\debug_utils.obj
+.\obj\dll_register.obj
+.\obj\graph.obj
+.\obj\health.obj
+.\obj\hud.obj
+.\obj\list.obj
+.\obj\main_menu.obj
+.\obj\map.obj
+.\obj\map_dm2.obj
+.\obj\map_tourney1.obj
+.\obj\map_tourney4.obj
+.\obj\menu.obj
+.\obj\multibot.obj
+.\obj\mw_hook.obj
+.\obj\pqrmod.obj
+.\obj\proc_hack.obj
+.\obj\time_help.obj
+.\obj\pqrmod.res
+]
+Creating command line "link.exe @C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F2.tmp"
+<h3>Output Window</h3>
+Compiling...
+ai.cpp
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(97) : warning C4800: 'unsigned char' : forcing value to bool 'true' or 'false' (performance warning)
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(268) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(268) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(278) : warning C4018: '>=' : signed/unsigned mismatch
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(388) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(388) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(535) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(536) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(542) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(543) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(551) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(558) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(561) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(572) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(579) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(582) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(606) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(607) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(610) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(612) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(622) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(622) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(689) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(690) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(691) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(697) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(697) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(697) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(697) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(700) : warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\ai.cpp(713) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+aim.cpp
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(133) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(149) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(151) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(152) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(156) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(157) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(160) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(160) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(170) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(170) : warning C4244: 'argument' : conversion from 'double' to 'unsigned short', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(171) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(220) : warning C4244: '=' : conversion from 'long double' to 'long', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(240) : warning C4244: '=' : conversion from 'long double' to 'long', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(243) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\aim.cpp(263) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+alias.cpp
+autorecord.cpp
+config_manager.cpp
+console.cpp
+health.cpp
+C:\Games\nfk_bot_project\frogbot_01_alpha3\health.cpp(237) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\health.cpp(238) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\health.cpp(267) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\Games\nfk_bot_project\frogbot_01_alpha3\health.cpp(233) : warning C4101: 'str' : unreferenced local variable
+hud.cpp
+main_menu.cpp
+mw_hook.cpp
+pqrmod.cpp
+proc_hack.cpp
+Generating Code...
+C:\Games\nfk_bot_project\frogbot_01_alpha3\console.cpp(13) : warning C4700: local variable 's' used without having been initialized
+Linking...
+   Creating library obj/pqrmod.lib and object obj/pqrmod.exp
+Creating temporary file "C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F6.tmp" with contents
+[
+/nologo /o"obj/bot2.bsc" 
+.\obj\ai.sbr
+.\obj\aim.sbr
+.\obj\alias.sbr
+.\obj\autorecord.sbr
+.\obj\config_manager.sbr
+.\obj\console.sbr
+.\obj\debug_utils.sbr
+.\obj\dll_register.sbr
+.\obj\graph.sbr
+.\obj\health.sbr
+.\obj\hud.sbr
+.\obj\list.sbr
+.\obj\main_menu.sbr
+.\obj\map.sbr
+.\obj\map_dm2.sbr
+.\obj\map_tourney1.sbr
+.\obj\map_tourney4.sbr
+.\obj\menu.sbr
+.\obj\multibot.sbr
+.\obj\mw_hook.sbr
+.\obj\pqrmod.sbr
+.\obj\proc_hack.sbr
+.\obj\time_help.sbr]
+Creating command line "bscmake.exe @C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F6.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+Creating temporary file "C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F7.bat" with contents
+[
+@echo off
+copy c:\Games\nfk_bot_project\frogbot_01_alpha3\public_release\pqrmod.dll c:\Games\nfk\nfk057\pqrmod\pqrmod.dll
+]
+Creating command line "C:\DOCUME~1\PQR\LOCALS~1\Temp\RSP1F7.bat"
+
+Скопировано файлов:         1.
+
+
+
+<h3>Results</h3>
+pqrmod.dll - 0 error(s), 51 warning(s)
+</pre>
+</body>
+</html>
