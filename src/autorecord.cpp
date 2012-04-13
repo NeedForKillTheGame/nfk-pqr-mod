@@ -233,7 +233,7 @@ void CAutorecord::Start()
 	//Дата и время
 	strcat(filename,"_");
 	LPSYSTEMTIME dt = new SYSTEMTIME;
-	GetSystemTime(dt);
+	GetLocalTime(dt);
 	char tmpstr[100];
 	itoa(dt->wDay,tmpstr,10);
 	if (dt->wDay<10) strcat(filename,"0");

@@ -96,6 +96,11 @@ CLocation::CLocation(char* str, int x1, int y1)
 	}
 }
 
+CLocation::~CLocation()
+{
+	if (text!=NULL) delete[] text; 
+}
+
 CItem::CItem()
 {
 	respawntime = 0;
@@ -156,18 +161,6 @@ bool CItem::UpdateItem() //Обновляет переменную времени до респауна данного итем
 
 bool CMap::LoadLocs()
 {
-	char path[255];
-	strcpy(path,NFKGameDir);
-	strcat(path,"\\locs\\");
-	strcat(path,fnP_DLL_GetSystemVariable("mapname"));
-	strcat(path,".loc");
-
-	//DEBUG PRINT
-	//Console.print(path);
-
-	FILE* f = fopen(path,"rt");
-	if (f==NULL) return false;
-
 	//Удаляем старую информацию о локациях на карте
 	if (Locs.size()!=0) //Перебираем в цикле все предметы
 	{
@@ -179,6 +172,18 @@ bool CMap::LoadLocs()
 		}
 		while(Locs.size()!=0);
 	}
+
+	char path[255];
+	strcpy(path,NFKGameDir);
+	strcat(path,"\\locs\\");
+	strcat(path,fnP_DLL_GetSystemVariable("mapname"));
+	strcat(path,".loc");
+
+	//DEBUG PRINT
+	//Console.print(path);
+
+	FILE* f = fopen(path,"rt");
+	if (f==NULL) return false;
 	
 	char str[1024];
 	char* p;
@@ -233,9 +238,7 @@ char* CMap::GetLoc(int x, int y) //Возвращает ближайшую к указанным координатам 
 }
 
 void CMap::ScanItems()
-{
-	
-	
+{	
 	//Удаляем старую информацию о предметах на карте
 	if (MapItems.size()!=0) //Перебираем в цикле все предметы
 	{

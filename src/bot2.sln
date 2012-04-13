@@ -1,29 +1,21 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual C++ Express 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bot2", "bot2.vcproj", "{BE13E60A-A292-4DB6-A4A6-B5853B367C61}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mw_hook", "mw_hook\mw_hook.vcproj", "{E2D4EA27-AFBB-45F0-8558-6115D074BB67}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Release = Release
-		Release_NO_CHEAT = Release_NO_CHEAT
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Win32 = Release|Win32
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{BE13E60A-A292-4DB6-A4A6-B5853B367C61}.Release.ActiveCfg = Release|Win32
-		{BE13E60A-A292-4DB6-A4A6-B5853B367C61}.Release.Build.0 = Release|Win32
-		{BE13E60A-A292-4DB6-A4A6-B5853B367C61}.Release_NO_CHEAT.ActiveCfg = Release|Win32
-		{BE13E60A-A292-4DB6-A4A6-B5853B367C61}.Release_NO_CHEAT.Build.0 = Release|Win32
-		{E2D4EA27-AFBB-45F0-8558-6115D074BB67}.Release.ActiveCfg = Release|Win32
-		{E2D4EA27-AFBB-45F0-8558-6115D074BB67}.Release.Build.0 = Release|Win32
-		{E2D4EA27-AFBB-45F0-8558-6115D074BB67}.Release_NO_CHEAT.ActiveCfg = Release|Win32
-		{E2D4EA27-AFBB-45F0-8558-6115D074BB67}.Release_NO_CHEAT.Build.0 = Release|Win32
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE13E60A-A292-4DB6-A4A6-B5853B367C61}.Release|Win32.ActiveCfg = Release|Win32
+		{BE13E60A-A292-4DB6-A4A6-B5853B367C61}.Release|Win32.Build.0 = Release|Win32
+		{E2D4EA27-AFBB-45F0-8558-6115D074BB67}.Release|Win32.ActiveCfg = Release|Win32
+		{E2D4EA27-AFBB-45F0-8558-6115D074BB67}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

@@ -287,14 +287,14 @@ PQRMOD_API void C_DLL_EVENT_ResetGame()
 
 	Autorecord.EVENT_ResetGame();
 	TeamHelp.EVENT_ResetGame();
-	//m_Map.EVENT_ResetGame();
+	m_Map.EVENT_MapChanged();
 }
 PQRMOD_API void C_DLL_EVENT_MapChanged()
 {
 	//DEBUG PRINT
 	//fnP_DLL_AddMessage("^2C_DLL_EVENT_MapChanged");
 
-	m_Map.EVENT_MapChanged();
+	//m_Map.EVENT_MapChanged();
 }
 
 PQRMOD_API void C_DLL_MainLoop()
@@ -305,7 +305,7 @@ PQRMOD_API void C_DLL_MainLoop()
 		if (TickCountMainLoop>50)
 		{
 			TickCountMainLoop = 0;
-			if (FirstFrameAfterReset) { m_Map.ScanItems(); FirstFrameAfterReset=false;}
+			if (FirstFrameAfterReset) { m_Map.EVENT_MapChanged(); m_Map.ScanItems(); FirstFrameAfterReset=false;}
 			//Раз в секунду проверяем значение warmup, и если оно от 0 до 5, отсылаем сообщение неоторым модулям
 			
 			char tmpstr[10];

@@ -41,6 +41,7 @@ class CLocation
 {
 public:
 	CLocation();
+	~CLocation();
 	CLocation(char* str,int x,int y);
 	char* text;
 	int x;

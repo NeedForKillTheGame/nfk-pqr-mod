@@ -122,13 +122,37 @@ void ConfigSave(char* fn)
 		while (Console.ListAliases.next());
 	}
 
-	if (KEY_Mouse5.GetCmdDown()!=NULL) fputs(va("bind mouse5 %s\n",KEY_Mouse5.GetCmdDown()),f);
-	if (KEY_Mouse6.GetCmdDown()!=NULL) fputs(va("bind mouse6 %s\n",KEY_Mouse6.GetCmdDown()),f);
-	if (KEY_Mouse7.GetCmdDown()!=NULL) fputs(va("bind mouse7 %s\n",KEY_Mouse7.GetCmdDown()),f);
-	if (KEY_Mouse8.GetCmdDown()!=NULL) fputs(va("bind mouse8 %s\n",KEY_Mouse8.GetCmdDown()),f);
+	if (KEY_Mouse1.GetCmdDown()!=NULL) fputs(va("bind2 mouse5 %s\n",KEY_Mouse5.GetCmdDown()),f);
+	if (KEY_Mouse2.GetCmdDown()!=NULL) fputs(va("bind2 mouse6 %s\n",KEY_Mouse6.GetCmdDown()),f);
+	if (KEY_Mouse3.GetCmdDown()!=NULL) fputs(va("bind2 mouse7 %s\n",KEY_Mouse7.GetCmdDown()),f);
+	if (KEY_Mouse4.GetCmdDown()!=NULL) fputs(va("bind2 mouse8 %s\n",KEY_Mouse8.GetCmdDown()),f);
+	if (KEY_Mouse5.GetCmdDown()!=NULL) fputs(va("bind2 mouse5 %s\n",KEY_Mouse5.GetCmdDown()),f);
+	if (KEY_Mouse6.GetCmdDown()!=NULL) fputs(va("bind2 mouse6 %s\n",KEY_Mouse6.GetCmdDown()),f);
+	if (KEY_Mouse7.GetCmdDown()!=NULL) fputs(va("bind2 mouse7 %s\n",KEY_Mouse7.GetCmdDown()),f);
+	if (KEY_Mouse8.GetCmdDown()!=NULL) fputs(va("bind2 mouse8 %s\n",KEY_Mouse8.GetCmdDown()),f);
+
+	if (KEY_Return.GetCmdDown()!=NULL) fputs(va("bind2 enter %s\n",KEY_Return.GetCmdDown()),f);
+	if (KEY_Tab.GetCmdDown()!=NULL) fputs(va("bind2 tab %s\n",KEY_Tab.GetCmdDown()),f);
+	if (KEY_Space.GetCmdDown()!=NULL) fputs(va("bind2 space %s\n",KEY_Space.GetCmdDown()),f);
+	if (KEY_BackSpace.GetCmdDown()!=NULL) fputs(va("bind2 backspace %s\n",KEY_BackSpace.GetCmdDown()),f);
+	if (KEY_Shift.GetCmdDown()!=NULL) fputs(va("bind2 shift %s\n",KEY_Shift.GetCmdDown()),f);
+	if (KEY_Ctrl.GetCmdDown()!=NULL) fputs(va("bind2 ctrl %s\n",KEY_Ctrl.GetCmdDown()),f);
+	if (KEY_Up.GetCmdDown()!=NULL) fputs(va("bind2 uparrow %s\n",KEY_Up.GetCmdDown()),f);
+	if (KEY_Down.GetCmdDown()!=NULL) fputs(va("bind2 downarrow %s\n",KEY_Down.GetCmdDown()),f);
+	if (KEY_Left.GetCmdDown()!=NULL) fputs(va("bind2 leftarrow %s\n",KEY_Left.GetCmdDown()),f);
+	if (KEY_Right.GetCmdDown()!=NULL) fputs(va("bind2 rightarrow %s\n",KEY_Right.GetCmdDown()),f);
+	if (KEY_Home.GetCmdDown()!=NULL) fputs(va("bind2 home %s\n",KEY_Home.GetCmdDown()),f);
+	if (KEY_End.GetCmdDown()!=NULL) fputs(va("bind2 end %s\n",KEY_End.GetCmdDown()),f);
+	if (KEY_PgUp.GetCmdDown()!=NULL) fputs(va("bind2 pgup %s\n",KEY_PgUp.GetCmdDown()),f);
+	if (KEY_PgDown.GetCmdDown()!=NULL) fputs(va("bind2 pgdown %s\n",KEY_PgDown.GetCmdDown()),f);
+
+	for(int i=33;i<96;i++)
+	{
+		if (KEY_Array[i-33].GetCmdDown()!=NULL) fputs(va("bind2 %c %s\n",i,KEY_Array[i-33].GetCmdDown()),f);;
+	}
 
 	fclose(f);
-	Console.printf("Config saved to file %s",fn);
+	Console.printf("Config saved to file %s.cfg",fn);
 }
 
 void ConfigLoad(char* fn)
@@ -154,9 +178,14 @@ void ConfigLoad(char* fn)
 		strcat(path,"\\");
 		strcat(path,fn);
 		strcat(path,".cfg");
+
+		f = fopen(path,"rt");
 		
-		Console.printf("^1Faild to open %s.cfg",fn);
-		return;
+		if (f==NULL)
+		{
+			Console.printf("^1Faild to open %s.cfg",fn);
+			return;
+		}
 	}
 
 	char str[1025];

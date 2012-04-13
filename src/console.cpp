@@ -25,6 +25,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 CConsole Console;
 void CMD_bind(char *str); //при вызове консольной команды bind
+void CMD_bind2(char *str); //при вызове консольной команды bind
 void CMD_alias(char *str); //при вызове консольной команды alias
 
 c_cmd* EmptyCMD;
@@ -50,7 +51,7 @@ c_cmd::c_cmd(char* n, char* s, fnOnExecute fn)
 
 bool c_cmd::cmp(char *str) //Возвращает TRUE если входной параметр эквивалентен полю string
 {
-	if (str==NULL || strlen(str)==0) return false;
+	if (string==NULL || str==NULL || strlen(str)==0) return false;
 	if (strcmp(string,str)==0) return true;
 	return false;
 }
@@ -294,6 +295,7 @@ c_alias::c_alias(char* n, char* s,const char* d, fnOnExecute fn): c_cmd(NULL,NUL
 	{
 		string = new char[strlen(s)+1];
 		strcpy(string,s);
+		fnP_DLL_RegisterConsoleCommand(string);
 	}
 	
 	if (d!=NULL)
@@ -390,9 +392,10 @@ c_alias* CConsole::FindAliasByString(char* s)
 void CConsole::RegisterConsoleCommands()
 {
 	c_cmd* bind = new c_cmd("bind","bind",CMD_bind);
+	c_cmd* bind2 = new c_cmd("bind2","bind2",CMD_bind2);
 	c_cmd* alias = new c_cmd("alias","alias",CMD_alias);
-	c_cmd* EmptyCMD = new c_cmd("EmptyCMD","EmptyCMD",CMD_EmptyCMD);
-	c_alias* EmptyAlias = new  c_alias("EmptyAlias","EmptyAlias");
+	c_cmd* EmptyCMD = new c_cmd(NULL,NULL,CMD_EmptyCMD);
+	c_alias* EmptyAlias = new  c_alias(NULL,NULL);
 
 	fnP_DLL_RegisterConsoleCommand("alias");
 }
@@ -550,11 +553,12 @@ void CConsole::ParseAlias(char* str)
 		SendCommands.top();
 		do
 		{
+			//Console.SendConsoleCommandOnNextFrame(SendCommands.cur()->d);
 			SendConsoleHCommand(SendCommands.cur()->d);
 			delete[] SendCommands.cur()->d;
 		}
 		while (SendCommands.next());
-		SendOnThisFrame.delAll();
+		SendCommands.delAll();
 	}
 }
 
@@ -579,6 +583,82 @@ void CMD_bind(char* str)
 	if (!strcmp(mkey,"mouse7") || !strcmp(mkey,"mbutton7")) K=&KEY_Mouse7;
 	else
 	if (!strcmp(mkey,"mouse8") || !strcmp(mkey,"mbutton8")) K=&KEY_Mouse8;
+
+	if (K!=NULL)
+		if (cmd = strtok(NULL,"\n")) //Используем переменную cmd для взятия следующего параметра
+			K->SetCmd(cmd); //Устанавливаем команду на нажатие соотв. кнопки
+		else //Если следующего параметра нет (т.е. было набрано что-то вроде "bind mouse6") надо вывести сообщение о текущем бинде
+			if (K->GetCmdDown()!=NULL)
+				Console.printf("%s binded to %s",mkey,K->GetCmdDown());
+			else
+				Console.printf("%s is unbinded",mkey);
+}
+
+void CMD_bind2(char* str)
+{
+	if (str==NULL || strlen(str)==0)
+	{
+		Console.print("bind2 <key> [command]");
+		return;
+	}
+	
+	char* mkey;
+	char* cmd;
+	mkey = strtok(str," ");
+	CKey* K=NULL;
+	int tmp_i;
+	if (strlen(mkey)==1)
+	{
+		K = KEY_Array+(mkey[0]>95?(mkey[0]-32):mkey[0])-33;
+	}
+	else
+	if (!strcmp(mkey,"mouse1") || !strcmp(mkey,"mbutton1")) K=&KEY_Mouse1;
+	else
+	if (!strcmp(mkey,"mouse2") || !strcmp(mkey,"mbutton2")) K=&KEY_Mouse2;
+	else
+	if (!strcmp(mkey,"mouse3") || !strcmp(mkey,"mbutton3")) K=&KEY_Mouse3;
+	else
+	if (!strcmp(mkey,"mouse5") || !strcmp(mkey,"mbutton5")) K=&KEY_Mouse5;
+	else
+	if (!strcmp(mkey,"mouse6") || !strcmp(mkey,"mbutton6")) K=&KEY_Mouse6;
+	else
+	if (!strcmp(mkey,"mouse4") || !strcmp(mkey,"mbutton4")) K=&KEY_Mouse4;
+	else
+	if (!strcmp(mkey,"mouse7") || !strcmp(mkey,"mbutton7")) K=&KEY_Mouse7;
+	else
+	if (!strcmp(mkey,"mouse8") || !strcmp(mkey,"mbutton8")) K=&KEY_Mouse8;
+	else
+	if (!strcmp(mkey,"mwheelup")) K=&KEY_MWheelUp;
+	else
+	if (!strcmp(mkey,"mwheeldown")) K=&KEY_MWheelDown;
+	else
+	if (!strcmp(mkey,"space")) K=&KEY_Space;
+	else
+	if (!strcmp(mkey,"backspace")) K=&KEY_BackSpace;
+	else
+	if (!strcmp(mkey,"enter")) K=&KEY_Return;
+	else
+	if (!strcmp(mkey,"uparrow")) K=&KEY_Up;
+	else
+	if (!strcmp(mkey,"downarrow")) K=&KEY_Down;
+	else
+	if (!strcmp(mkey,"leftarrow")) K=&KEY_Left;
+	else
+	if (!strcmp(mkey,"rightarrow")) K=&KEY_Right;
+	else
+	if (!strcmp(mkey,"home")) K=&KEY_Home;
+	else
+	if (!strcmp(mkey,"end")) K=&KEY_End;
+	else
+	if (!strcmp(mkey,"shift")) K=&KEY_Shift;
+	else
+	if (!strcmp(mkey,"ctrl")) K=&KEY_Ctrl;
+	else
+	if (!strcmp(mkey,"tab")) K=&KEY_Tab;
+	else
+	if (!strcmp(mkey,"pgup")) K=&KEY_PgUp;
+	else
+	if (!strcmp(mkey,"pgdown")) K=&KEY_PgDown;
 
 	if (K!=NULL)
 		if (cmd = strtok(NULL,"\n")) //Используем переменную cmd для взятия следующего параметра
